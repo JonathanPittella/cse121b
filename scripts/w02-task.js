@@ -1,27 +1,37 @@
-/* W02-Task - Profile Home Page */
+const fullName = "Jonathan Pittella";
+const currentYear = new Date().getFullYear();
+const profilePicture = "images\\JonathanPittella.jpeg";
 
-/* Step 1 - Setup type tasks - no code required */
+const foodElement = document.querySelector(".block");
+let yearElement = document.querySelector("#year");
+const imageElement = document.querySelector("img");
 
-/* Step 2 - Variables */
+yearElement.textContent = currentYear;
+imageElement.setAttribute("src", profilePicture);
+imageElement.setAttribute("alt", fullName);
 
-let fullName = "Jonathan Pittella";
-const nameElement = document.getElementById("name");
-nameElement.innerHTML = `<strong>${fullName}</strong>`;
+let favoriteFood = ['Barbecue', 'Sushi', 'Rice', 'Potato Salad'];
 
-let currentYear = 2024;
-const yearElement = document.querySelector("#year");
-yearElement.innerHTML = currentYear;
+foodElement.innerHTML = favoriteFood.join('<br>');
 
-let favoriteFood = ['Barbecue '];
-favoriteFood.push(' Sushi', ' Rice', ' Potato Salad');
+let newFood = "Ice Cream";
+favoriteFood.push(newFood);
+
+let foodSlice = favoriteFood.slice();
+
+console.log(foodSlice);
+foodElement.innerHTML += `<br>${favoriteFood}`;
+
+
+
+
+/*const nameElement = document.getElementById("name");
+//nameElement.innerHTML = `<strong>${fullName}</strong>`;
 
 const myfoodElement = favoriteFood.indexOf('Barbecue', 0);
 if (myfoodElement !== -1) {
     favoriteFood.splice(myfoodElement, 1);
 }
-
-const foodElement = document.getElementById("food");
-
 foodElement.innerHTML = favoriteFood.join(', ');
 
 for (let i = 0; i < 2; i++) {
@@ -30,29 +40,29 @@ for (let i = 0; i < 2; i++) {
         : element + ',<br> '; });
     }
 
-// Log the sliced array to the console
+ Log the sliced array to the console
 let removeElement = favoriteFood.slice(0);
 console.log(removeElement);
 
 
-//foodElement.innerHTML = `<br>${favoriteFood}`;
+foodElement.innerHTML = `<br>${favoriteFood}`;
 
-//let faviteFood = ['Barbecue '];
-//favoriteFood.push(' Sushi', ' Rice', ' Potato Salad, ');
+let faviteFood = ['Barbecue '];
+favoriteFood.push(' Sushi', ' Rice', ' Potato Salad, ');
 
-//document.getElementById("food").innerHTML = faviteFood.join(', ')
+document.getElementById("food").innerHTML = faviteFood.join(', ')
 
-//let removeElement = favoriteFood.splice(0);
-//console.log(removeElement);
+let removeElement = favoriteFood.splice(0);
+console.log(removeElement);
 
-//const foodElement = document.getElementById("food");
-//foodElement.innerHTML = `<br>${favoriteFood}</br>`
+const foodElement = document.getElementById("food");
+foodElement.innerHTML = `<br>${favoriteFood}</br>`
 
-//for (let i = 0; i < 5; i++) foodElement.innerHTML += ", " + favoriteFood.slice(0).join(", ");
+for (let i = 0; i < 5; i++) foodElement.innerHTML += ", " + favoriteFood.slice(0).join(", ");
 
-const profilePicture = "images\JonathanPittella.jpeg";
 const profileImage = "Profile Image of Jonathan Pittella"
 
 let profileImageElement = document.getElementById("PlaceholderImage");
 profileImageElement.src = profilePicture;
 profileImageElement.alt = profileImage;
+*/
