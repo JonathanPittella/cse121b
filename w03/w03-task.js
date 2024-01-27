@@ -4,25 +4,25 @@
 
 // Function Definition - Add Numbers
 function addNumbers() {
-    let num1 = parseFloat(document.getElementById("add1").value);
-    let num2 = parseFloat(document.getElementById("add2").value);
-    let sum = num1 + num2;
+    let add1 = parseFloat(document.getElementById("add1").value);
+    let add2 = parseFloat(document.getElementById("add2").value);
+    let sum = add1 + add2;
     document.getElementById("sum").value = sum;
 }
 
 // Function Expression - Subtract Numbers
 const subtractNumbers = function() {
-    let num1 = parseFloat(document.getElementById("subtract1").value);
-    let num2 = parseFloat(document.getElementById("subtract2").value);
-    let difference = num1 - num2;
+    let subtract1 = parseFloat(document.getElementById("subtract1").value);
+    let subtract2 = parseFloat(document.getElementById("subtract2").value);
+    let difference = subtract1 - subtract2;
     document.getElementById("difference").value = difference;
 };
 
 // Arrow Function - Multiply Numbers
 const multiplyNumbers = () => {
-    let num1 = parseFloat(document.getElementById("factor1").value);
-    let num2 = parseFloat(document.getElementById("factor2").value);
-    let product = num1 * num2;
+    let factor1 = parseFloat(document.getElementById("factor1").value);
+    let factor2 = parseFloat(document.getElementById("factor2").value);
+    let product = factor1 * factor2;
     document.getElementById("product").value = product;
 };
 
@@ -63,28 +63,27 @@ document.getElementById("getTotal").addEventListener("click", getTotal);
 
 // Function to generate arrays and perform operations
 function generateArrays() {
-    // Getting source array
-    let sourceArray = document.getElementById("array").textContent.split(',').map(Number);
+    // Getting numbers array
+    
+    let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
-    // Outputting source array
-    document.getElementById("array").textContent = sourceArray.join(', ');
+    // Outputting numbers array
+    document.getElementById("array").textContent = numbersArray.join(', ');
 
     // Filtering odd and even numbers
-    let oddNumbers = sourceArray.filter(num => num % 2 !== 0);
-    let evenNumbers = sourceArray.filter(num => num % 2 === 0);
+    let oddNumbers = numbersArray.filter(num => num % 2 !== 0);
+    let evenNumbers = numbersArray.filter(num => num % 2 === 0);
 
     // Outputting odd and even numbers
     document.getElementById("odds").textContent = oddNumbers.join(', ');
     document.getElementById("evens").textContent = evenNumbers.join(', ');
 
     // Calculating sum of original array
-    let sumOfArray = sourceArray.reduce((acc, curr) => acc + curr, 0);
+    let sumOfArray = numbersArray.reduce((acc, curr) => acc + curr, 0);
     document.getElementById("sumOfArray").textContent = sumOfArray;
 
-    // Multiplying each element of source array by 2
-    let multipliedArray = sourceArray.map(num => num * 2);
-
-    // Outputting multiplied array
+    // Multiplying each element of numbers array by 2
+    let multipliedArray = numbersArray.map(num => num * 2);
     document.getElementById("multiplied").textContent = multipliedArray.join(', ');
 
     // Calculating sum of multiplied array
