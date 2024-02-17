@@ -1,0 +1,78 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .chat-container {
+        width: 300px;
+        margin: 17px auto;
+        border: solid #ccc;
+        border-radius: 1px;
+        overflow: hidden;
+    }
+    .chat-messages {
+        padding: 10px;
+        height: 200px;
+        overflow-y: scroll;
+    }
+    .chat-input {
+        width: calc(100% - 20px);
+        padding: 5px 10px;
+        border: none;
+        border-top: 1px solid #ccc;
+        font-size: 14px;
+    }
+    .chat-options {
+        padding: 10px;
+        background-color: #f2f2f2;
+    }
+    .chat-option {
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .chat-option:hover {
+        background-color: #ddd;
+    }
+
+    .chat-tab {
+        position: fixed;
+        top: 20px; /* Ajuste a posição do chat-tab conforme necessário */
+        left: 50%; /* Centralize horizontalmente */
+        transform: translateX(-50%);
+        background-color: #007bff;
+        text-align: center;
+        color: #fff;
+        padding: 18px;
+        width: 265px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 2; /* Garante que o chat-tab esteja acima do chat-container */
+      }
+      
+      .chat-container {
+        display: none;
+        position: fixed;
+        top: 60px; /* Ajuste a distância entre o chat-tab e o chat-container conforme necessário */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 5px;
+        overflow-y: auto;
+        z-index: 1; /* Garante que o chat-container esteja abaixo do chat-tab */
+      }
+      
+      .chat-box {
+        padding: 10px;
+      }
+      
+      .chat-option {
+        cursor: pointer;
+      }
+      
+      .chat-option:hover {
+        background-color: #f2f2f2;
+      }      
+      

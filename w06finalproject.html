@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot com Opções Pré-definidas</title>
+<link rel="stylesheet" href="/styles/mainfinal.css">
+</head>
+<body>
+
+<div class="chat-tab" id="chatTab">
+    Chat
+</div>
+<div class="chat-container" id="chatContainer">
+    <div class="chat-box" id="chatBox">
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-options" id="chat-options">
+            <div class="chat-option" onclick="sendMessage('Joseph Smith Jr')">Joseph Smith Jr</div>
+            <div class="chat-option" onclick="sendMessage('Wilford Woodruff')">Wilford Woodruff</div>
+            <div class="chat-option" onclick="sendMessage('Russell M. Nelson')">Russell M. Nelson</div>
+        </div>
+        <input type="text" class="chat-input" id="user-input" placeholder="Digite sua mensagem..." onkeydown="handleKeyDown(event)">
+    </div>
+</div>
+
+<script src="/scripts/w06finalproject.js"></script>
+</body>
+</html>
