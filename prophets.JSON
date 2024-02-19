@@ -2,14 +2,17 @@
     "prophets_js":[
     {
       "name": "Joseph Smith Jr",
-      "contribution": "Contribution: Joseph Smith Jr. was the founder of The Church of Jesus Christ of Latter-day Saints, commonly known as the Mormon Church. He is recognized as the first prophet of this church and was responsible for translating the Book of Mormon, which is one of the sacred scriptures of Mormonism. He also received additional revelations that are considered canonical by church members, including the Doctrine and Covenants and Pearl of Great Price."
+      "botMessage": "<div><strong>Bot:</strong> Date of Birth: December 23, 1805. Date of Death: June 27, 1844.</div>",
+      "contribution": "Contribution: Joseph Smith Jr. was the founder of The Church of Jesus Christ of Latter-day Saints. He is recognized as the first prophet of this church and was responsible for translating the Book of Mormon, which is one of the sacred scriptures of The Church Of Jesus Christ of Latter-day Saints. He also received additional revelations that are considered canonical by church members, including the Doctrine and Covenants and Pearl of Great Price."
     },
     {
-      "name": "Wilford Woodruff",    
+      "name": "Wilford Woodruff",   
+      "botMessage": "<div><strong>Bot:</strong> Date of Birth: March 1, 1807. Date of Death: September 2, 1898.</div>",
       "contribution": "Contribution: Wilford Woodruff was the fourth prophet and president of The Church of Jesus Christ of Latter-day Saints. During his time as prophet, he led the church through a significant period of its history, including the decision to end the practice of polygamy among church members in 1890 through the Manifesto of President Wilford Woodruff."
     },
     {
       "name": "Russell M. Nelson",
+      "botMessage": "<div><strong>Bot:</strong> Date of Birth: September 9, 1924. Prophesied from 2018 to the present.</div>",
       "contribution": "Contribution: Russell M. Nelson is the current prophet and president of The Church of Jesus Christ of Latter-day Saints. He assumed leadership of the church in 2018, succeeding Thomas S. Monson. As prophet, he has led the church in issues of global expansion, technological advancements, and emphasis on education and self-reliance among members."
     }
     ]

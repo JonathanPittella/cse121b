@@ -10,46 +10,56 @@ chatTab.addEventListener('click', () => {
   } else {
     chatContainer.style.display = 'none';
   }
+
+  // Make a request to get the current date and time
+  fetch('http://worldtimeapi.org/api/ip')
+    .then(response => response.json())
+    .then(data => {
+      const currentDateTime = new Date(data.datetime);
+      console.log('Current date and time:', currentDateTime);
+      // Display the current date and time in the console for debugging purposes
+    })
+    .catch(error => console.error('An error occurred while getting the date and time:', error));
 });
+
+let prophetsData; // Variable to store the data of the prophets
 
 fetch('prophets.json')
   .then(response => response.json())
   .then(data => {
-    const prophets = data.prophets_js;
-
-    prophets.forEach(prophet => {
-      console.log(`Contribution: ${prophet.contribution}`);
-      console.log("---------------------");
-    });
+    prophetsData = data.prophets_js; // Store the data of the prophets in the prophetsData variable
   })
-  .catch(error => console.error('Ocorreu um erro ao obter os dados:', error));
-
+  .catch(error => console.error('An error occurred while getting the data:', error));
 
 function sendMessage(message) {
     var chatMessages = document.getElementById("chat-messages");
-    var userMessage = "<div><strong>Você:</strong> " + message + "</div>";
+    var userMessage = "<div><strong>You:</strong> " + message + "</div>";
     chatMessages.innerHTML += userMessage;
 
-    // Respostas pré-definidas
-    var botMessage;
-    switch(message) {
-        case 'Joseph Smith Jr':
-            botMessage = "<div><strong>Bot:</strong> Date of Birth: December 23, 1805. \Date of Death: June 27, 1844.</div>";
-            
-            break;
-        case 'Wilford Woodruff':
-            botMessage = "<div><strong>Bot:</strong> Date of Birth: March 1, 1807. \Date of Death: September 2, 1898.</div>";
-            break;
-        case 'Russell M. Nelson':
-            botMessage = "<div><strong>Bot:</strong> Date of Birth: September 9, 1924. \Prophesied from 2018 to the present.</div>";
-            break;
-        default:
-            botMessage = "<div><strong>Bot:</strong> Desculpe, não entendi.</div>";
-            break;
+    // Check if the name entered by the user matches any prophet
+    const prophet = prophetsData.find(p => p.name === message);
+    if (prophet) {
+        // If it matches, display the botMessage and contribution information
+        var botMessage = "<div><strong>Bot:</strong> " + prophet.botMessage + "</div>";
+        botMessage += "<div><strong>Contribution:</strong> " + prophet.contribution + "</div>";
+
+        // Display the search date after the bot's response
+        fetch('http://worldtimeapi.org/api/ip')
+          .then(response => response.json())
+          .then(data => {
+            const currentDateTime = new Date(data.datetime);
+            var searchDate = "<div><strong>Search Date:</strong> " + currentDateTime.toLocaleString() + "</div>";
+            chatMessages.innerHTML += searchDate;
+          })
+          .catch(error => console.error('An error occurred while getting the date and time:', error));
+    } else {
+        // If it doesn't match, display an error message
+        var botMessage = "<div><strong>Bot:</strong> Sorry, I couldn't find information about that prophet.</div>";
     }
+    
     chatMessages.innerHTML += botMessage;
 
-    // Scroll automático
+    // Automatic scrolling
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
