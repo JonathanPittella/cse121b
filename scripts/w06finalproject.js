@@ -24,7 +24,7 @@ chatTab.addEventListener('click', () => {
 
 let prophetsData; // Variable to store the data of the prophets
 
-fetch('//prophets.JSON')
+fetch("prophets.JSON")
   .then(response => response.json())
   .then(data => {
     prophetsData = data.prophets_js; // Store the data of the prophets in the prophetsData variable
