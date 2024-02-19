@@ -10,16 +10,6 @@ chatTab.addEventListener('click', () => {
   } else {
     chatContainer.style.display = 'none';
   }
-
-  // Make a request to get the current date and time
-  fetch("http://worldtimeapi.org/api/ip")
-    .then(response => response.json())
-    .then(data => {
-      const currentDateTime = new Date(data.datetime);
-      console.log('Current date and time:', currentDateTime);
-      // Display the current date and time in the console for debugging purposes
-    })
-    .catch(error => console.error('An error occurred while getting the date and time:', error));
 });
 
 let prophetsData; // Variable to store the data of the prophets
