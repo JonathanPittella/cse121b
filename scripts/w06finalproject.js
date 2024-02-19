@@ -12,7 +12,7 @@ chatTab.addEventListener('click', () => {
   }
 
   // Make a request to get the current date and time
-  fetch('http://worldtimeapi.org/api/ip')
+  fetch("http://worldtimeapi.org/api/ip")
     .then(response => response.json())
     .then(data => {
       const currentDateTime = new Date(data.datetime);
