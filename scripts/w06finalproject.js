@@ -34,7 +34,7 @@ function sendMessage(message) {
         botMessage += "<div><strong>Contribution:</strong> " + prophet.contribution + "</div>";
 
         // Display the search date after the bot's response
-        fetch('http://worldtimeapi.org/api/ip')
+        fetch('https://worldtimeapi.org/api/ip')
           .then(response => response.json())
           .then(data => {
             const currentDateTime = new Date(data.datetime);
